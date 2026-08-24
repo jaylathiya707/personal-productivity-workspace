@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "node node_modules/next/dist/bin/next dev -p 3000",
     "start:open": "cmd /c start http://localhost:3000 && node node_modules/next/dist/bin/next dev -p 3000",
-    "build": "node node_modules/prisma/build/index.js db push && node node_modules/next/dist/bin/next build",
-    "start": "node node_modules/next/dist/bin/next start"
+    "build": "node node_modules/prisma/build/index.js generate && node node_modules/prisma/build/index.js db push && node node_modules/next/dist/bin/next build",
+    "start": "node node_modules/next/dist/bin/next start",
+    "postinstall": "node node_modules/prisma/build/index.js generate"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^18.0.1",
